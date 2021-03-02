@@ -1,28 +1,5 @@
 <template>
-  <div class='home bg-gray-50'>
-    <el-row class="container" align='middle'>
-      <el-col class="container" :span="18">
-        <!--dash board-->
-        <div>
-          <top-bar/>
-           <div>
-           <el-row class="card-box" :gutter="20">
-           <el-col :span="24">
-           <el-card class="card">进行中事项</el-card>
-           </el-col>
-           <el-col :span="12">
-           <el-card class="card">我的xx</el-card>
-           </el-col>
-            <el-col :span="12">
-           <el-card class="card">进行中的项目</el-card>
-           </el-col>
-           </el-row>
-         </div>
-        </div>
-      </el-col>
-      <el-col class="container" :span="6">
-          <!--side-board-->
-        <div class='side-bar vertical-box'>
+  <div class='side-bar vertical-box'>
     <div class="vertical-box">
       <router-link to="/user">
       <div class="avatar"></div>
@@ -51,48 +28,23 @@
       <div style="height: 7rem;width:100%;"/>
     </el-card>
   </div>
-      </el-col>
-    </el-row>
-
-  </div>
 </template>
 
 <script>
-import TopBar from './TopBar.vue'
 export default {
-  components: {
-    TopBar
-  }
+
 }
 </script>
 
-<style>
-.home, .container{
-  height: 100%;
-}
-.top-bar{
-  display: flex;
-  justify-content: flex-start;
-  justify-items: center;
-}
-.logo{
-  color: #409EFF;
-  padding: 1.1rem;
-  margin-right: 2rem;
-  margin-left: 1rem;
-}
+<style lang='less' scoped>
 
-.card-box{
-  padding: 20px;
-}
-
-.card{
-  margin-top: 1rem;
-  height: 14rem;
-}
 .side-bar{
   background-color: #409EFF;
   height: 100%;
+
+  // border-top-left-radius: 2em;
+  // border-bottom-left-radius: 2em;
+
   box-shadow: 0px 0px 20px #409EFF;
 }
 
