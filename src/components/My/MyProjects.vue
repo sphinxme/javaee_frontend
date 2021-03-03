@@ -1,30 +1,61 @@
 <template>
   <div>
-    <div>MyProjects</div>
-    <div>
-      <el-card :body-style="{ padding: '0px' }">
-      <img src="https://www.hualigs.cn/image/6028fb4a1d312.jpg" class="image">
-      <div style="padding: 14px;">
-        <span>好吃的汉堡</span>
-        <div class="bottom clearfix">
-          <time class="time">{{ currentDate }}</time>
-          <el-button type="text" class="button">操作按钮</el-button>
-        </div>
-      </div>
-    </el-card>
 
+    <div>
+      <project-list-item
+        class="animate__fadeInRightBig"
+        v-for="project in projects" :key="project.id"
+        :project="project"/>
+
+      <el-card :body-style="{ padding: '0px' }">
+      <div class="project-box" style="padding: 14px;">
+
+        <p>mmp</p>
+
+        <div class="bottom">
+          <el-button round type="primary">操作按钮</el-button>
+        </div>
+
+      </div>
+      </el-card>
+
+    <h1 class="animate__animated animate__bounce">An animated element</h1>
     </div>
   </div>
 </template>
 
 <script>
+import ProjectListItem from './MyProjects/ProjectListItem.vue'
+
 export default {
-  // https://www.hualigs.cn/image/6028fb4a1d312.jpg
+
+  // 自定义组件
+  components: {
+    ProjectListItem
+  },
 
   data () {
     return {
       projects: [
-        {}
+        {
+          id: 1,
+          name: '项目名称',
+          tags: ['宣传部', '飞行计划', 'dzgg'],
+          progress: 70
+        },
+        {
+          id: 2,
+          name: '项目名称',
+          tags: ['宣传部', '飞行计划', 'dzgg'],
+          progress: 30
+        },
+
+        {
+          id: 4,
+          name: '项目名称',
+          tags: ['宣传部', '飞行计划', 'dzgg'],
+          progress: 45
+        }
       ]
 
     }
@@ -32,6 +63,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 
 </style>

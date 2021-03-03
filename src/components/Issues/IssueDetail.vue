@@ -57,9 +57,9 @@
 export default {
   methods: {
     tableRowClassName ({ row, rowIndex }) {
-      console.log(row)
+      // console.log(row)
       if (row.status === '1') {
-        console.log('我被设置成fininshed了')
+        // console.log('我被设置成fininshed了')
         return 'finished '
       }
       return ''

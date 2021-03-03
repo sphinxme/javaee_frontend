@@ -16,18 +16,19 @@ import MyIssues from '../components/My/MyIssues.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', redirect: '/issues' },
+  { path: '/', redirect: '/home' },
   { path: '/login', component: Login },
   { path: '/home', component: Home },
   { path: '/board', component: Board },
   { path: '/user', component: UserCenter },
-  { path: '/issues', component: Issues },
+  // { path: '/issues', component: Issues },
   {
     path: '/my',
     component: My,
     children: [
       { path: '/my/myprojects', component: MyProjects },
-      { path: '/my/myissues', component: MyIssues }
+      { path: '/my/myissues', component: MyIssues },
+      { path: '/my/issue-details/:id', component: Issues }
     ]
   }
 ]

@@ -6,11 +6,14 @@ import {
   Row, Col,
   Message,
   Steps, Step,
+  Tag,
   Popover,
   DatePicker,
   Dialog,
+  Progress,
   Menu, MenuItem, MenuItemGroup,
   Table, TableColumn,
+  Loading,
   Card
 } from 'element-ui'
 
@@ -53,7 +56,16 @@ Vue.use(Steps)
 Vue.use(Step)
 
 //
+Vue.use(Tag)
+
+//
 Vue.use(Popover)
 
 //
 Vue.use(DatePicker)
+
+//
+Vue.use(Progress)
+
+//
+Vue.use(Loading)
