@@ -1,14 +1,18 @@
 import Vue from 'vue'
 import {
   Button,
-  Form, FormItem, Select, Input, Option,
+  Form, FormItem, Select, Input, Option, Radio, RadioButton, RadioGroup,
   Container, Main, Header, Aside, Footer,
   Row, Col,
   Message,
   Steps, Step,
   Tag,
   Popover,
+  Tooltip,
   DatePicker,
+  Upload,
+  Calendar,
+  Timeline, TimelineItem,
   Dialog,
   Progress,
   Menu, MenuItem, MenuItemGroup,
@@ -38,6 +42,9 @@ Vue.use(Option)
 Vue.use(FormItem)
 Vue.use(Input)
 Vue.use(Dialog)
+Vue.use(Radio)
+Vue.use(RadioButton)
+Vue.use(RadioGroup)
 
 //
 Vue.prototype.$message = Message
@@ -62,8 +69,16 @@ Vue.use(Tag)
 Vue.use(Popover)
 
 //
-Vue.use(DatePicker)
+Vue.use(Tooltip)
 
+//
+Vue.use(DatePicker)
+Vue.use(Calendar)
+
+Vue.use(Upload)
+
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 //
 Vue.use(Progress)
 

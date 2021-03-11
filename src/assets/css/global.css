@@ -1,7 +1,88 @@
 /* 全局样式表 */
 
-html, body, #app {
+/* fonts */
+
+/* 
+    Google Fonts 中科大镜像
+    fonts.gstatic.com     =>  fonts-gstatic.proxy.ustclug.org
+    fonts.googleapis.com  =>  fonts.proxy.ustclug.org
+    ajax.googleapis.com   =>  ajax.proxy.ustclug.org 
+*/
+
+/* 
+    Google Fonts loli.net镜像
+    fonts.gstatic.com               =>  gstatic.loli.net
+    fonts.googleapis.com            =>  fonts.loli.net
+    themes.googleusercontent.com    =>  themes.loli.net
+    ajax.googleapis.com             =>  ajax.proxy.ustclug.org 
+*/
+
+
+/* 思源雅黑 */
+/* font-family: 'Noto Sans SC', sans-serif; */
+/* weight: 100/300/400/500/700/900 */
+@import url('https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
+
+
+
+
+/* 
+ * Ubuntu
+ * font-family: 'Ubuntu', sans-serif;
+ * weight: 300/400/500/700
+ * italic 
+ */
+@import url('https://fonts.loli.net/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/*
+ * 站酷快乐体 
+ * font-family: 'ZCOOL KuaiLe', cursive; 
+ * 
+ */
+@import url('https://fonts.loli.net/css2?family=ZCOOL+KuaiLe&display=swap');
+
+/*
+ * Stick
+ * font-family: 'Stick', sans-serif;
+ */
+@import url('https://fonts.loli.net/css2?family=Stick&display=swap');
+
+/* 小米兰亭Pro VF 
+ * font-family: 'MI Lan Pro VF'
+ * weight: Thin/ExtraLight/Light/Normal/Regular/Medium/DemiBold/SemiBold/Bold/Heavy
+ */
+@font-face {
+    font-family: 'MI Lan Pro VF';
+    src: url('../fonts/MI\ Lan\ Pro\ VF.woff')
+}
+
+html,
+body,
+#app {
+    /* font-family: 'MI Lan Pro VF', 'ZCOOL Kuaile', sans-serif; */
+    /* font-weight: Thin; */
     height: 100%;
     margin: 0;
     padding: 0;
+}
+
+.hover-hand:hover {
+    cursor: pointer;
+}
+
+.all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-stand {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 统一背景色 */
+.common-black-bg-color {
+    background-color: #1F2330;
 }

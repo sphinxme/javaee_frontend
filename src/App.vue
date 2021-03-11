@@ -1,7 +1,14 @@
 <template>
   <div id="app">
     <!--路由占位符-->
-    <router-view></router-view>
+    <transition
+      mode="out-in"
+      enter-active-class="animated fadeIn faster"
+      leave-active-class="animated fadeOut faster"
+    >
+      <router-view
+      style="animation-duration: 0.3s;"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -16,6 +23,6 @@ export default {
 
 <style>
 /* #app {
-
+  pointer-events: none;
 } */
 </style>

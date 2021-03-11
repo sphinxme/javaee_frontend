@@ -2,35 +2,55 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // 页面导入
+import Root from '../views/Root.vue'
+import Workflow from '../views/Workflow.vue'
+import DashBoard from '../views/DashBoard.vue'
+import Playground from '../views/Playground.vue'
+import ProjectDetail from '../views/Workflow/ProjectDetail.vue'
+
 import Login from '../views/Login.vue'
-import Home from '../views/Home.vue'
-import Board from '../views/Board.vue'
 import UserCenter from '../views/UserCenter.vue'
-import Issues from '../views/Issues.vue'
+
+import UserInfo from '../components/UserCenter/UserInfo.vue'
+import Avator from '../components/UserCenter/Avator.vue'
 
 //
-import My from '../views/My.vue'
-import MyProjects from '../components/My/MyProjects.vue'
-import MyIssues from '../components/My/MyIssues.vue'
+import MyProjects from '../views/Workflow/MyProjects.vue'
+import MyIssues from '../views/Workflow/MyIssues.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', redirect: '/home' },
+  { path: '/', redirect: '/root' },
   { path: '/login', component: Login },
-  { path: '/home', component: Home },
-  { path: '/board', component: Board },
-  { path: '/user', component: UserCenter },
-  // { path: '/issues', component: Issues },
+  { path: '/root/workflow/project-detail/:id', component: ProjectDetail, props: true },
   {
-    path: '/my',
-    component: My,
+    path: '/root',
+    redirect: '/root/dashboard',
+    component: Root,
     children: [
-      { path: '/my/myprojects', component: MyProjects },
-      { path: '/my/myissues', component: MyIssues },
-      { path: '/my/issue-details/:id', component: Issues }
+      {
+        path: '/root/workflow',
+        redirect: '/root/workflow/issues',
+        component: Workflow,
+        children: [
+          { path: '/root/workflow/projects', component: MyProjects },
+          { path: '/root/workflow/issues', component: MyIssues }
+        ]
+      },
+      { path: '/root/dashboard', component: DashBoard },
+      { path: '/root/playground', component: Playground }
+    ]
+  },
+  {
+    path: '/user',
+    component: UserCenter,
+    children: [
+      { path: '/user/info', component: UserInfo },
+      { path: '/user/avator', component: Avator }
     ]
   }
+
 ]
 
 const router = new VueRouter({

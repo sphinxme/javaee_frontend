@@ -34,16 +34,16 @@ export default {
       console.log('执行登录操作并取回token')
 
       // 假装执行了后台登录请求操作
-      const token = 'this is a token'
+      const token = '1'
 
       this.$store.commit('setToken', { token: token })
       localStorage.token = token
 
       this.$message({
-        message: '登录成功or失败',
+        message: '登录成功',
         type: 'success'
       })
-      this.$router.push('/home')
+      this.$router.push('/root/')
     }
   }
 }
