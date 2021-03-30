@@ -1,13 +1,15 @@
 <template>
   <div class="playground">
-
+    <!-- <div style="display:flex;justify-content:space-between;align-items:center;">
     <headline text="广场" :textColor="$globalStyles.plaintextColor"/>
-
+    <i class="el-icon-plus plus" @click="createVisible=true"/>
+    </div> -->
+    <headline text="广场" :textColor="$globalStyles.plaintextColor"/>
     <div style="height:20px;"/>
     <div class="projects">
     <float-card>
     <template v-slot:content>
-      <p align="center">全部活动</p>
+      <p class="card-title">全部活动</p>
       <div class="search-box">
         <div class="title">活动名称:</div>
 
@@ -20,11 +22,12 @@
       </div>
       <div class="tag-box">
         <div class="title">活动标签:</div>
-
+        <div class="radio-box">
         <el-radio-group @change="getProjectsByTag" v-model="currentTag">
           <el-radio label="" border>All</el-radio>
           <el-radio v-for="tag in Alltags" :key="tag" :label="tag" border>{{tag}}</el-radio>
         </el-radio-group>
+        </div>
       </div>
     </template>
     </float-card>
@@ -37,6 +40,46 @@
       :style="'animation-delay: ' + i * 0.1 + 's;'"
       :project="project"/>
     </div>
+
+    <el-dialog title="新建项目" :append-to-body="true" :visible.sync="createVisible">
+      <el-form label-position="right" label-width="80px" :model="newProjectData">
+
+        <el-form-item label="名称">
+          <el-input v-model="newProjectData.name"></el-input>
+        </el-form-item>
+
+        <el-form-item label="项目描述">
+          <el-input type="textarea" :autosize="{ minRows: 2, maxRows:7}" v-model="newProjectData.desc"></el-input>
+        </el-form-item>
+
+        <el-form-item label="标签">
+
+           <el-select
+            v-model="newProjectData.tags"
+            multiple
+            filterable
+            allow-create
+            placeholder="请选择或输入标签">
+            <el-option
+              v-for="item in availableTags"
+              :key="item"
+              :label="item"
+              :value="item">
+            </el-option>
+          </el-select>
+        </el-form-item>
+
+        <el-form-item>
+          <el-button type="primary" @click="submitForm()">立即创建</el-button>
+          <el-button @click="resetForm()">重置</el-button>
+        </el-form-item>
+
+      </el-form>
+    </el-dialog>
+
+    <el-tooltip content="新建项目" placement="top-end">
+    <el-button @click="createVisible=true" class="create-button" style="font-size:2rem;" type="primary" icon="el-icon-plus" circle ></el-button>
+    </el-tooltip>
 
   </div>
 </template>
@@ -105,10 +148,17 @@ export default {
   },
   data () {
     return {
+      createVisible: false,
       Alltags: [],
       projects: [],
       currentTag: '',
-      searchName: ''
+      searchName: '',
+      newProjectData: {
+        name: '',
+        desc: '',
+        tags: []
+      },
+      availableTags: ['宣传部', '飞行计划', 'dzgg']
     }
   }
 }
@@ -117,6 +167,11 @@ export default {
 <style lang="less">
 .playground {
   padding: 20px;
+
+  .card-title {
+    text-align: center;
+    padding-bottom: 20px;
+  }
 
   .search-box {
     display: flex;
@@ -139,6 +194,38 @@ export default {
     display: none !important;
   }
 
+  .el-radio.is-bordered+.el-radio.is-bordered {
+    margin: 10px !important;
+  }
+
+  .el-radio {
+    margin-right: 10px !important;
+  }
+
+}
+
+.create-button {
+  z-index: 1;
+  position: fixed;
+  right: 7%;
+  bottom: 7%;
+  font-size: 3rem;
+  box-shadow: 0 0 50px #409EFF;
+
+  .el-button.is-circle{
+    font-size: 2rem !important;
+  }
+}
+
+.plus {
+  font-size:3rem;
+  margin-right: 30px;
+  border-radius: 50%;
+
+}
+
+.plus:hover {
+  cursor: pointer;
 }
 
 </style>

@@ -46,9 +46,9 @@ export default {
       naviBar: {
         width: 3,
         menuList: [
-          { icon: 'el-icon-s-marketing', path: '/root/dashboard', desc: '概览' },
-          { icon: 'el-icon-s-custom', path: '/root/workflow', desc: '我的工作' },
-          { icon: 'el-icon-s-comment', path: '/root/playground', desc: '广场' }
+          { icon: 'el-icon-s-custom', path: '/root/dashboard', desc: '概览' },
+          { icon: 'el-icon-s-claim', path: '/root/workflow', desc: '我的工作' },
+          { icon: 'el-icon-s-promotion', path: '/root/playground', desc: '广场' }
         ]
       }
     }

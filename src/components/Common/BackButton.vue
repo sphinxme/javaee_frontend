@@ -1,11 +1,21 @@
 <template>
-<div class="back-button all-center" @click="$router.go(-1)">
-  <i class="back-icon el-icon-back animated  "></i>
+<div class="back-button all-center" @click="$router.go(goto)">
+  <i class="el-icon-back animated " :style="'color: ' + color"></i>
 </div>
 </template>
 
 <script>
 export default {
+  props: {
+    color: {
+      type: String,
+      default: 'white'
+    },
+    goto: {
+      type: String,
+      default: -1
+    }
+  }
 
 }
 </script>
@@ -18,10 +28,6 @@ export default {
   font-size: 1.5rem;
   :hover{
     cursor: pointer;
-  }
-
-  .back-icon {
-    color: rgb(255, 255, 255);
   }
 
 }

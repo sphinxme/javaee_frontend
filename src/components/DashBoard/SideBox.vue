@@ -17,19 +17,13 @@
       </div>
     </div>
 
-    <div style="height: 40px;"/>
-
     <div class="vertical-box">
-      <el-tag effect="dark" type="success">已完成事务个数: 5</el-tag>
-      <div style="height: 0.5rem;"/>
-      <el-tag effect="dark" type="danger">待完成事务个数: 3</el-tag>
-      <!-- <div class="fixed-num"></div> -->
-      <div style="height: 3rem;"/>
+      <div style="height: 2rem;"/>
       <div class="info-text">今天也要加油鸭!</div>
     </div>
-
-    <div style="height: 40px;"/>
+    <div style="height: 20px;"/>
   </div>
+
 </template>
 </float-card>
 </template>

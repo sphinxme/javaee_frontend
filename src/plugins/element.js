@@ -18,7 +18,9 @@ import {
   Menu, MenuItem, MenuItemGroup,
   Table, TableColumn,
   Loading,
-  Card
+  Card,
+  Drawer,
+  Avatar
 } from 'element-ui'
 
 Vue.use(Button)
@@ -84,3 +86,5 @@ Vue.use(Progress)
 
 //
 Vue.use(Loading)
+Vue.use(Avatar)
+Vue.use(Drawer)

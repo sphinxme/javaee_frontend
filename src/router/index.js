@@ -12,7 +12,7 @@ import Login from '../views/Login.vue'
 import UserCenter from '../views/UserCenter.vue'
 
 import UserInfo from '../components/UserCenter/UserInfo.vue'
-import Avator from '../components/UserCenter/Avator.vue'
+import Department from '../components/UserCenter/Department.vue'
 
 //
 import MyProjects from '../views/Workflow/MyProjects.vue'
@@ -45,9 +45,10 @@ const routes = [
   {
     path: '/user',
     component: UserCenter,
+    redirect: '/user/info',
     children: [
       { path: '/user/info', component: UserInfo },
-      { path: '/user/avator', component: Avator }
+      { path: '/user/department', component: Department }
     ]
   }
 
